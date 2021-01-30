@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>读取结果</title>
+    <style>
+
+    div.main{
+    margin-top: 50px;
+    margin-left:30%;
+
+    {#top:200px;#}
+    }
+    .top{
+        top:0;
+    }
+    .sTitle{
+        font-size: 20px;
+    }
+    </style>
+</head>
+<body>
+<div class="top" style="width:100%;height: 60px;background-color: #ffcc00;top:0px"onclick="film()">
+    <div style="margin-left: 300px">
+    <h1 style="font-weight: normal">AIMovie 艾慕尾<span class="sTitle">  ——值得信赖的观影小助手</span></h1>
+    </div>
+</div>
+{#<h3 style="text-align: center">读取结果</h3>#}
+<div class="main">
+<div class="row">
+    <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                        <th>电影名称</th>
+                         <th>分数</th>
+
+                        <tr>
+                            {% for i in labels %}
+                                <td>{{ i }}</td>
+                            {% endfor %}
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for i in content %}
+                            <tr>
+                                {% for j in i %}
+                                    <td>{{ j }}</td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{#<input class="button"   value="返回" style="margin-left: 30px" onclick="index()">#}
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+<script>
+    {#跳转到结果界面#}
+function index()
+    {
+        {#window.open("{{ url_for("http://localhost:5000") }}","_self");#}
+    }
+</script>
+</div>
+</body>
+</html>
